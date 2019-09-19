@@ -20,7 +20,7 @@
 				"skipLineCount": 0,
 				"firstRowAsHeader": false
 			},
-			"fileName": "*.csv",
+			"fileName": "01.csv",
 			"folderPath": {
 				"value": "adf-data/gamedata/2016",
 				"type": "Expression"
