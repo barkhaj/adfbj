@@ -1,0 +1,32 @@
+{
+	"name": "AzureBlobStorageSourceDatasetEntity1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "blob_store",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"Year": {
+				"type": "string",
+				"defaultValue": "2016"
+			}
+		},
+		"annotations": [],
+		"type": "AzureBlob",
+		"typeProperties": {
+			"format": {
+				"type": "TextFormat",
+				"columnDelimiter": ",",
+				"rowDelimiter": "",
+				"treatEmptyAsNull": true,
+				"skipLineCount": 0,
+				"firstRowAsHeader": false
+			},
+			"fileName": "02.csv",
+			"folderPath": {
+				"value": "adf-data/gamedata/@{dataset().Year}/01",
+				"type": "Expression"
+			}
+		}
+	}
+}
