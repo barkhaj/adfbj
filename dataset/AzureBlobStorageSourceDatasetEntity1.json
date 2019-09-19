@@ -5,14 +5,12 @@
 			"referenceName": "blob_store",
 			"type": "LinkedServiceReference"
 		},
-		"parameters": {
-			"Year": {
-				"type": "string",
-				"defaultValue": "2016"
-			}
-		},
 		"annotations": [],
 		"type": "AzureBlob",
+		"structure": {
+			"value": "{\n  \"name\": \"daily_gamedata_csv\",\n  \"properties\": {\n    \"structure\": [\n      {\n        \"name\": \"player\",\n        \"type\": \"String\"\n      },\n      {\n        \"name\": \"time\",\n        \"type\": \"String\"\n      },\n      {\n        \"name\": \"points\",\n        \"type\": \"Int32\"\n      }\n    ],\n    \"published\": false,\n    \"type\": \"AzureBlob\",\n    \"linkedServiceName\": \"blob-store\",\n    \"typeProperties\": {\n      \"folderPath\": \"adf-data/gamedata/{Year}/{Month}\",\n      \"fileName\": \"{Day}.csv\",\n      \"format\": {\n        \"type\": \"TextFormat\",\n        \"columnDelimiter\": \",\",\n        \"firstRowAsHeader\": true\n      },\n      \"partitionedBy\": [\n        {\n          \"name\": \"Year\",\n          \"value\": {\n            \"type\": \"DateTime\",\n            \"date\": \"SliceStart\",\n            \"format\": \"yyyy\"\n          }\n        },\n        {\n          \"name\": \"Month\",\n          \"value\": {\n            \"type\": \"DateTime\",\n            \"date\": \"SliceStart\",\n            \"format\": \"MM\"\n          }\n        },\n        {\n          \"name\": \"Day\",\n          \"value\": {\n            \"type\": \"DateTime\",\n            \"date\": \"SliceStart\",\n            \"format\": \"dd\"\n          }\n        }\n      ]\n    },\n    \"availability\": {\n      \"frequency\": \"Day\",\n      \"interval\": 1\n    },\n    \"external\": true,\n    \"policy\": {}\n  }\n}",
+			"type": "Expression"
+		},
 		"typeProperties": {
 			"format": {
 				"type": "TextFormat",
@@ -22,9 +20,9 @@
 				"skipLineCount": 0,
 				"firstRowAsHeader": false
 			},
-			"fileName": "02.csv",
+			"fileName": "*.csv",
 			"folderPath": {
-				"value": "adf-data/gamedata/2016/01",
+				"value": "adf-data/gamedata/2016",
 				"type": "Expression"
 			}
 		}
