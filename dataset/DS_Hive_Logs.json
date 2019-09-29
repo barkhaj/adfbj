@@ -1,0 +1,36 @@
+{
+	"name": "DS_Hive_Logs",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "sql_database",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "log_date",
+				"type": "date"
+			},
+			{
+				"name": "requests",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "bytes_in",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "bytes_out",
+				"type": "float",
+				"precision": 15
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "hivelogs"
+		}
+	}
+}
