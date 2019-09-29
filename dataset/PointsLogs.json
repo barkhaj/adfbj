@@ -1,15 +1,11 @@
 {
-	"name": "Json1",
+	"name": "PointsLogs",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "blob_store",
 			"type": "LinkedServiceReference"
 		},
 		"parameters": {
-			"Year": {
-				"type": "string",
-				"defaultValue": "2016"
-			},
 			"Month": {
 				"type": "string",
 				"defaultValue": "01"
@@ -21,115 +17,11 @@
 			"location": {
 				"type": "AzureBlobStorageLocation",
 				"fileName": {
-					"value": "@{dataset().Year}/@{dataset().Month}/log.txt",
+					"value": "@{dataset().Month}/log.txt",
 					"type": "Expression"
 				},
-				"folderPath": "iislogs",
+				"folderPath": "gamedata/2016",
 				"container": "adf-data"
-			}
-		},
-		"schema": {
-			"type": "object",
-			"properties": {
-				"name": {
-					"type": "string"
-				},
-				"properties": {
-					"type": "object",
-					"properties": {
-						"structure": {
-							"type": "array",
-							"items": {
-								"type": "object",
-								"properties": {
-									"name": {
-										"type": "string"
-									},
-									"type": {
-										"type": "string"
-									}
-								}
-							}
-						},
-						"type": {
-							"type": "string"
-						},
-						"linkedServiceName": {
-							"type": "string"
-						},
-						"typeProperties": {
-							"type": "object",
-							"properties": {
-								"folderPath": {
-									"type": "string"
-								},
-								"format": {
-									"type": "object",
-									"properties": {
-										"type": {
-											"type": "string"
-										},
-										"columnDelimiter": {
-											"type": "string"
-										}
-									}
-								},
-								"partitionedBy": {
-									"type": "array",
-									"items": {
-										"type": "object",
-										"properties": {
-											"name": {
-												"type": "string"
-											},
-											"value": {
-												"type": "object",
-												"properties": {
-													"type": {
-														"type": "string"
-													},
-													"date": {
-														"type": "string"
-													},
-													"format": {
-														"type": "string"
-													}
-												}
-											}
-										}
-									}
-								}
-							}
-						},
-						"availability": {
-							"type": "object",
-							"properties": {
-								"frequency": {
-									"type": "string"
-								},
-								"interval": {
-									"type": "integer"
-								}
-							}
-						},
-						"external": {
-							"type": "boolean"
-						},
-						"policy": {
-							"type": "object",
-							"properties": {
-								"validation": {
-									"type": "object",
-									"properties": {
-										"minimumSizeMB": {
-											"type": "number"
-										}
-									}
-								}
-							}
-						}
-					}
-				}
 			}
 		}
 	}
