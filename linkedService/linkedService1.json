@@ -1,0 +1,30 @@
+{
+	"name": "linkedService1",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "HDInsightOnDemand",
+		"typeProperties": {
+			"clusterType": "hadoop",
+			"clusterSize": 4,
+			"timeToLive": "00:15:00",
+			"version": "3.6",
+			"hostSubscriptionId": "e6a70066-e8df-4aac-90b9-461dcc83a951",
+			"clusterResourceGroup": "DEV-ADF-RG",
+			"servicePrincipalId": "azdevadmin",
+			"tenant": "19962e72-f937-4a88-baea-29db0aaae0bc",
+			"clusterNamePrefix": "",
+			"additionalLinkedServiceNames": [],
+			"linkedServiceName": {
+				"referenceName": "blob_store",
+				"type": "LinkedServiceReference"
+			},
+			"headNodeSize": "",
+			"dataNodeSize": "",
+			"zookeeperNodeSize": "",
+			"subnetName": "",
+			"virtualNetworkId": "",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkFaLURFVi1BREZCSl85NzNkZjJhOS03M2IwLTRjMmQtYjAxYS1lZDk5MDllNjM3MWQiDQp9"
+		}
+	}
+}
