@@ -1,5 +1,5 @@
 {
-	"name": "hivelogs",
+	"name": "hive_iislog_txt",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "blob_store",
