@@ -1,5 +1,5 @@
 {
-	"name": "AzureSqlTable1",
+	"name": "DS_Points",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "sql_database",
@@ -30,7 +30,7 @@
 		],
 		"typeProperties": {
 			"schema": "dbo",
-			"table": "hivelogs"
+			"table": "points"
 		}
 	}
 }
