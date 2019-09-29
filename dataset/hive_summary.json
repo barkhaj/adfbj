@@ -1,0 +1,19 @@
+{
+	"name": "hive_summary",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "blob_store",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "hive-summary.json",
+				"folderPath": "iislogs",
+				"container": "adf-data"
+			}
+		}
+	}
+}
