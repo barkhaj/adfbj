@@ -10,8 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "01.txt",
-				"folderPath": "sales/2016/01",
+				"folderPath": "sales/2016",
 				"container": "adf-data"
 			},
 			"columnDelimiter": "\t",
