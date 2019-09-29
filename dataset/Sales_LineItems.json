@@ -47,7 +47,7 @@
 		],
 		"typeProperties": {
 			"schema": "dbo",
-			"table": "LineItems"
+			"table": "Sales"
 		}
 	}
 }
