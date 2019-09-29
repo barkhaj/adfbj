@@ -17,10 +17,22 @@
 				"typeProperties": {
 					"scriptPath": "adf-data/iislogs/SummarizeLogs.hql",
 					"defines": {
-						"log_folder": "",
-						"year": "",
-						"month": "",
-						"summary_folder": ""
+						"log_folder": {
+							"value": "wasbs://adf-data@devstoragebj.blob.core.windows.net/iislogs",
+							"type": "Expression"
+						},
+						"year": {
+							"value": "wasbs://adf-data@devstoragebj.blob.core.windows.net/iislogs/2016",
+							"type": "Expression"
+						},
+						"month": {
+							"value": "wasbs://adf-data@devstoragebj.blob.core.windows.net/iislogs/01",
+							"type": "Expression"
+						},
+						"summary_folder": {
+							"value": "wasbs://adf-data@devstoragebj.blob.core.windows.net/iislogs/summaryfolder",
+							"type": "Expression"
+						}
 					},
 					"scriptLinkedService": {
 						"referenceName": "blob_store",
@@ -28,7 +40,7 @@
 					}
 				},
 				"linkedServiceName": {
-					"referenceName": "hdi_cluster",
+					"referenceName": "linkedService1",
 					"type": "LinkedServiceReference"
 				}
 			},
