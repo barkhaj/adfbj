@@ -1,0 +1,19 @@
+{
+	"name": "dbo_hivelogs",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "blob_store",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "dbo-hivelogs.json",
+				"folderPath": "iislogs",
+				"container": "adf-data"
+			}
+		}
+	}
+}
